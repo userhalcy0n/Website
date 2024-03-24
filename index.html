@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" style="zoom: 150%">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>userHalcy0n</title>
+    <style>
+        @font-face {
+            font-family: 'Univox';
+            src: url('fonts/Univox.otf') format('opentype');
+        }
+    
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #0a0a5a; /* Darker color */
+            color: #ffffff; /* White */
+        }
+        .container {
+            max-width: 90%; /* Adjusted width */
+            margin: 20px auto;
+            padding: 15px; /* Adjusted padding */
+            background-color: #0a0a5a; /* Same as background color */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center; /* Center align content */
+        }
+        .profile-img {
+            width: 120px; /* Adjusted width */
+            height: 120px; /* Adjusted height */
+            border-radius: 50%; /* Make it circular */
+            margin-bottom: 8px; /* Add some space below the image */
+        }
+        .links {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0; /* Adjusted margin between profile image and buttons */
+        }
+        .links li {
+            margin-bottom: 8px; /* Adjusted margin */
+        }
+        .links li a {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centering the content horizontally */
+            padding: 12px; /* Adjusted padding */
+            background-color: #0a0a5a; /* Same as background color */
+            color: #ffffff; /* White */
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid #000000; /* Black outline color */
+            transition: background-color 0.3s ease;
+            font-size: 1.8vw; /* Responsive font size */
+            width: auto; /* Set the width to auto */
+            padding: 0 16px; /* Add padding to ensure visual consistency */
+        }
+        .links li a i {
+            font-size: 3.5vw; /* Responsive font size */
+            margin-right: 8px;
+        }
+        .links li a:hover {
+            background-color: #3d037f; /* Lighter Purple */
+        }
+    
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+            .links li a {
+                font-size: 3.5vw; /* Adjusted font size for smaller screens */
+            }
+            .links li a i {
+                font-size: 5.5vw; /* Adjusted font size for smaller screens */
+            }
+        }
+    </style>    
+</head>
+<body style="background-color: #070733;"> <!-- Darker background color for body -->
+    <div class="container">
+        <img src="images/Profile.jpg" alt="Profile Picture" class="profile-img">
+        <img src="images/text.svg" class="user-text-svg" style="filter: brightness(0) invert(1);"> <!-- SVG Image -->
+        <ul class="links">
+            <li><a href="https://soundcloud.com/userhalcy0n"><i class="fab fa-soundcloud"></i></a></li>
+            <li><a href="https://www.instagram.com/userhalcy0n/"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://bandcamp.com/userhalcy0n"><i class="fab fa-bandcamp"></i></a></li>
+            <li><a href="https://www.youtube.com/@userHalcy0n"><i class="fab fa-youtube"></i></a></li>
+        </ul>        
+    </div>
+</body>
+</html>
