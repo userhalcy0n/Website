@@ -65,7 +65,7 @@
         .links li a:hover {
             background-color: #3d037f; /* Lighter Purple */
         }
-    
+        
         /* Responsive styles */
         @media (max-width: 768px) {
             .container {
@@ -76,6 +76,11 @@
             }
             .links li a i {
                 font-size: 5.5vw; /* Adjusted font size for smaller screens */
+            }
+            .container img[src$="text.png"] {
+                width: 80%; /* Adjusted width for smaller screens */
+                height: auto; /* Maintain aspect ratio */
+                max-width: 300px; /* Limit maximum width */
             }
         }
     </style>    
