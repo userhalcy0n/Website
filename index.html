@@ -11,66 +11,94 @@
             font-family: 'Univox';
             src: url('fonts/Univox.otf') format('opentype');
         }
-    
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #000000; /* Darker color */
-            color: #ffffff; /* White */
+            background-color: #000000; /* PS2 Black */
+            color: #ffffff;
         }
+
+        /* Center the main container */
         .container {
-            max-width: 90%; /* Adjusted width */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically if needed */
+            max-width: 90%;
             margin: 20px auto;
-            padding: 15px; /* Adjusted padding */
-            background-color: #000000; /* Same as background color */
+            padding: 15px;
+            background-color: #000000;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            text-align: center; /* Center align content */
+            text-align: center;
         }
+
+        /* Profile Image */
         .profile-img {
-            width: 120px; /* Adjusted width */
-            height: 120px; /* Adjusted height */
-            border-radius: 50%; /* Make it circular */
-            margin-bottom: 8px; /* Add some space below the image */
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 8px;
         }
+
+        /* Responsive Text Image */
+        .container img[src$="text.png"] {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Center the links list */
         .links {
-            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center horizontally */
+            align-items: center;
             padding: 0;
-            margin: 10px 0; /* Adjusted margin between profile image and buttons */
+            margin: 20px 0;
         }
+
+        /* Style each list item */
         .links li {
-            margin-bottom: 8px; /* Adjusted margin */
+            list-style: none;
+            margin: 10px; /* Space between buttons */
         }
+
+        /* Circular glowing buttons */
         .links li a {
             display: flex;
             align-items: center;
-            justify-content: center; /* Centering the content horizontally */
-            padding: 12px; /* Adjusted padding */
-            background-color: #000000; /* Same as background color */
-            color: #ffffff; /* White */
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #000000; /* PS2 Black */
             text-decoration: none;
-            border-radius: 4px;
-            border: 1px solid #000000; /* Black outline color */
-            transition: background-color 0.3s ease;
-            font-size: 1.8vw; /* Responsive font size */
-            width: auto; /* Set the width to auto */
-            padding: 0 16px; /* Add padding to ensure visual consistency */
+            border: 2px solid #118fdb; /* PS2 Blue */
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 12px rgba(17, 143, 219, 0.7); /* Soft blue glow */
+            font-size: 2vw;
         }
+
+        /* Icon inside buttons */
         .links li a i {
-            font-size: 3.5vw; /* Responsive font size */
-            margin-right: 8px;
+            font-size: 2vw;
+            color: #118fdb !important; /* PS2 Blue */
         }
+
+        /* Hover effect */
         .links li a:hover {
-            background-color: #13017d; /* Lighter Purple */
+            background-color: #13017d; /* PS2 Purple */
+            box-shadow: 0 0 20px rgba(19, 1, 125, 1); /* Stronger glow */
+            border-color: #13017d; /* Change border to purple */
         }
-        
-        /* Change icon color */
-        .links li a i {
-            color: #118fdb !important;
+
+        .links li a:hover i {
+            color: #ffffff !important; /* White icon on hover */
         }
-        
+
         /* Responsive styles */
         @media (max-width: 768px) {
             .container {
@@ -78,13 +106,15 @@
             }
             .links li a {
                 font-size: 3.5vw; /* Adjusted font size for smaller screens */
+                width: 50px; /* Slightly smaller buttons */
+                height: 50px;
             }
             .links li a i {
-                font-size: 5.5vw; /* Adjusted font size for smaller screens */
+                font-size: 3.5vw;
             }
             .container img[src$="text.png"] {
-                width: 80%; /* Adjusted width for smaller screens */
-                max-width: 300px; /* Limit maximum width */
+                width: 80%;
+                max-width: 300px;
             }
         }
     </style>    
