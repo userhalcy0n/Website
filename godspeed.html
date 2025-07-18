@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" style="zoom: 150%">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image" href="/images/icon.png">
+    <title>godspeed</title>
+    <style>
+        @font-face {
+            font-family: 'Univox';
+            src: url('fonts/Univox.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000000; /* PS2 Black */
+            color: #ffffff;
+        }
+
+        /* Center the main container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically if needed */
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #000000;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Profile Image */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive Text Image */
+        .container img[src$="text.png"] {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Center the links list */
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center horizontally */
+            align-items: center;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        /* Style each list item */
+        .links li {
+            list-style: none;
+            margin: 10px; /* Space between buttons */
+        }
+
+        /* Circular glowing buttons */
+        .links li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #000000; /* PS2 Black */
+            text-decoration: none;
+            border: 2px solid #118fdb; /* PS2 Blue */
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 12px rgba(17, 143, 219, 0.7); /* Soft blue glow */
+            font-size: 2vw;
+        }
+
+        /* Icon inside buttons */
+        .links li a i {
+            font-size: 2vw;
+            color: #118fdb !important; /* PS2 Blue */
+        }
+
+        /* Hover effect */
+        .links li a:hover {
+            background-color: #13017d; /* PS2 Purple */
+            box-shadow: 0 0 20px rgba(19, 1, 125, 1); /* Stronger glow */
+            border-color: #13017d; /* Change border to purple */
+        }
+
+        .links li a:hover i {
+            color: #ffffff !important; /* White icon on hover */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+            .links li a {
+                font-size: 3.5vw; /* Adjusted font size for smaller screens */
+                width: 50px; /* Slightly smaller buttons */
+                height: 50px;
+            }
+            .links li a i {
+                font-size: 3.5vw;
+            }
+            .container img[src$="text.png"] {
+                width: 80%;
+                max-width: 300px;
+            }
+        }
+    </style>    
+</head>
+<body style="background-color: #000000;"> <!-- Darker background color for body -->
+    <div class="container">
+        <img src="images/godspeed.jpg" class="profile-img">
+        <ul class="links">
+            <li><a href="https://music.apple.com/tr/album/godspeed-single/1827091760"><i class="fab fa-apple"></i></a></li>
+            <li><a href="https://open.spotify.com/album/3N9yqRh8MvW5HicKSnCiIL"><i class="fab fa-spotify"></i></a></li>
+            <li><a href="https://soundcloud.com/userhalcy0n/godspeed"><i class="fab fa-soundcloud"></i></a></li>
+            <li><a href="https://www.youtube.com/watch?v=Zj6dnzDJkwM"><i class="fab fa-youtube"></i></a></li>
+        </ul>        
+    </div>
+</body>
+</html>
