@@ -33,7 +33,7 @@
     padding: 0;
     text-align: center;
     }
-    
+
     /* Blue glare reflection */
     .container::before {
     content: "";
@@ -68,11 +68,14 @@
 
     /* Text logo */
     .container img[src$="text.png"] {
-    width: 115%; /* slightly wider than container */
-    max-width: 600px; /* increased cap for large screens */
+    width: 90%;          /* slightly narrower than before */
+    max-width: 480px;    /* tighter cap */
     filter: drop-shadow(0 0 8px rgba(17,143,219,0.45));
-    margin-top: 10px;
-    transform: scale(1.05); /* subtle proportional widening */
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(1.10);
     }
     
     /* Links list */
