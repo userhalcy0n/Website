@@ -1,137 +1,181 @@
 <!DOCTYPE html>
-<html lang="en" style="zoom: 150%">
+<html lang="en" style="zoom:150%">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" type="image" href="/images/icon.png">
-    <title>userHalcy0n</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" type="image" href="/images/icon.png">
+  <title>userHalcy0n</title>
+  <style>
         @font-face {
-            font-family: 'Univox';
-            src: url('fonts/Univox.otf') format('opentype');
-        }
+    font-family: 'Univox';
+    src: url('fonts/Univox.otf') format('opentype');
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #000000; /* PS2 Black */
-            color: #ffffff;
-        }
+    body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at 50% 0%, #0a0a0a 0%, #000000 100%);
+    color: #ffffff;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    }
 
-        /* Center the main container */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center horizontally */
-            justify-content: center; /* Center vertically if needed */
-            max-width: 90%;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #000000;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
+    /* Container with inner glass glare */
+    .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 25px 35px 40px 35px;
+    border-radius: 20px;
+    background: rgba(10, 10, 10, 0.6);
+    box-shadow: inset 0 0 30px rgba(17, 143, 219, 0.15),
+                0 0 40px rgba(17, 143, 219, 0.35);
+    backdrop-filter: blur(10px) saturate(130%);
+    text-align: center;
+    border: 1px solid rgba(17,143,219,0.25);
+    overflow: hidden;
+    }
 
-        /* Profile Image */
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 8px;
-        }
+    /* Blue glare reflection */
+    .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(
+        to bottom,
+        rgba(16,140,217,0.45) 0%,  /* #108cd9 */
+        rgba(16,140,217,0.12) 40%,
+        transparent 100%
+    );
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    filter: blur(8px);
+    pointer-events: none;
+    }
 
-        /* Responsive Text Image */
-        .container img[src$="text.png"] {
-            width: 100%;
-            max-width: 500px;
-        }
+    /* Profile image */
+    .profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    border: 2px solid rgba(17,143,219,0.6);
+    box-shadow: 0 0 25px rgba(17,143,219,0.45);
+    background: radial-gradient(circle at 30% 30%, #1b1b1b, #000);
+    object-fit: cover;
+    }
 
-        /* Center the links list */
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Center horizontally */
-            align-items: center;
-            padding: 0;
-            margin: 20px 0;
-        }
+    /* Text logo */
+    .container img[src$="text.png"] {
+    width: 115%; /* slightly wider than container */
+    max-width: 600px; /* increased cap for large screens */
+    filter: drop-shadow(0 0 8px rgba(17,143,219,0.45));
+    margin-top: 10px;
+    transform: scale(1.05); /* subtle proportional widening */
+    }
+    
+    /* Links list */
+    .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0 10px 0;
+    padding: 0;
+    }
 
-        /* Style each list item */
-        .links li {
-            list-style: none;
-            margin: 10px; /* Space between buttons */
-        }
+    .links li {
+    list-style: none;
+    margin: 12px;
+    }
 
-        /* Circular glowing buttons */
-        .links li a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #000000; /* PS2 Black */
-            text-decoration: none;
-            border: 2px solid #118fdb; /* PS2 Blue */
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 12px rgba(17, 143, 219, 0.7); /* Soft blue glow */
-            font-size: 2vw;
-        }
+    /* Buttons */
+    .links li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, rgba(0,0,0,0.9), rgba(20,20,20,0.9));
+    border: 1px solid rgba(17,143,219,0.6);
+    box-shadow:
+        0 0 10px rgba(17,143,219,0.4),
+        inset 0 0 15px rgba(17,143,219,0.2);
+    transition: all 0.25s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    }
 
-        /* Icon inside buttons */
-        .links li a i {
-            font-size: 2vw;
-            color: #118fdb !important; /* PS2 Blue */
-        }
+    /* Gloss overlay on hover */
+    .links li a::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(16,140,217,0.3), transparent 60%);
+    transform: translateY(60%) rotate(25deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    }
 
-        /* Hover effect */
-        .links li a:hover {
-            background-color: #13017d; /* PS2 Purple */
-            box-shadow: 0 0 20px rgba(19, 1, 125, 1); /* Stronger glow */
-            border-color: #13017d; /* Change border to purple */
-        }
+    .links li a i {
+    font-size: 2vw;
+    color: #118fdb !important;
+    transition: color 0.25s ease, transform 0.25s ease;
+    }
 
-        .links li a:hover i {
-            color: #ffffff !important; /* White icon on hover */
-        }
+    .links li a:hover {
+    border-color: #13017d;
+    box-shadow: 0 0 25px rgba(19,1,125,0.9), inset 0 0 30px rgba(19,1,125,0.4);
+    background: linear-gradient(145deg, #000000 20%, #13017d 120%);
+    }
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .container {
-                max-width: 90%;
-            }
-            .links li a {
-                font-size: 3.5vw; /* Adjusted font size for smaller screens */
-                width: 50px; /* Slightly smaller buttons */
-                height: 50px;
-            }
-            .links li a i {
-                font-size: 3.5vw;
-            }
-            .container img[src$="text.png"] {
-                width: 80%;
-                max-width: 300px;
-            }
-        }
-    </style>    
+    .links li a:hover::before {
+    opacity: 0.4;
+    }
+
+    .links li a:hover i {
+    color: #ffffff !important;
+    transform: scale(1.15);
+    }
+
+    @media (max-width: 768px) {
+    .links li a {
+        width: 55px;
+        height: 55px;
+    }
+    .links li a i {
+        font-size: 4vw;
+    }
+    }
+
+  </style>
 </head>
-<body style="background-color: #000000;"> <!-- Darker background color for body -->
-    <div class="container">
-        <img src="images/userhalcy0n.gif" alt="userHalcy0n Profile Picture" class="profile-img">
-        <img src="images/text.png" style="width: 100%;" alt="userHalcy0n logo">
-        <ul class="links">
-            <li><a href="https://music.apple.com/artist/userhalcy0n/1821092517"><i class="fab fa-apple"></i></a></li>
-            <li><a href="https://open.spotify.com/artist/3rG3clSOP9RjpOsm2wgpXe"><i class="fab fa-spotify"></i></a></li>
-            <li><a href="https://userhalcy0n.bandcamp.com"><i class="fab fa-bandcamp"></i></a></li>
-            <li><a href="https://soundcloud.com/userhalcy0n"><i class="fab fa-soundcloud"></i></a></li>
-            <li><a href="https://www.youtube.com/@userHalcy0n"><i class="fab fa-youtube"></i></a></li>
-            <li><a href="https://www.instagram.com/userhalcy0n/"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://www.pinterest.com/userHalcy0n"><i class="fab fa-pinterest"></i></a></li>
-        </ul>        
-    </div>
+<body>
+  <div class="container">
+    <img src="images/userhalcy0n.gif" alt="Welcome." class="profile-img">
+    <img src="images/text.png">
+    <ul class="links">
+      <li><a href="https://music.apple.com/artist/userhalcy0n/1821092517"><i class="fab fa-apple"></i></a></li>
+      <li><a href="https://open.spotify.com/artist/3rG3clSOP9RjpOsm2wgpXe"><i class="fab fa-spotify"></i></a></li>
+      <li><a href="https://userhalcy0n.bandcamp.com"><i class="fab fa-bandcamp"></i></a></li>
+      <li><a href="https://soundcloud.com/userhalcy0n"><i class="fab fa-soundcloud"></i></a></li>
+      <li><a href="https://www.youtube.com/@userHalcy0n"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="https://www.instagram.com/userhalcy0n/"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="https://www.pinterest.com/userHalcy0n"><i class="fab fa-pinterest"></i></a></li>
+    </ul>
+  </div>
 </body>
 </html>
