@@ -22,19 +22,18 @@
         background-attachment: fixed;
         }
 
-        /* Container with inner glass glare */
         .container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         max-width: 90%;
-        margin: 10px auto 60px auto; /* reduced top margin */
+        margin: 10px auto 60px auto;
         padding: 0;
         text-align: center;
+        position: relative;
         }
 
-        /* Blue glare reflection */
         .container::before {
         content: "";
         position: absolute;
@@ -44,7 +43,7 @@
         height: 60%;
         background: linear-gradient(
             to bottom,
-            rgba(16,140,217,0.45) 0%,  /* #108cd9 */
+            rgba(16,140,217,0.45) 0%,
             rgba(16,140,217,0.12) 40%,
             transparent 100%
         );
@@ -54,31 +53,20 @@
         pointer-events: none;
         }
 
-        /* Profile image */
-        .profile-img {
-        width: 200px;             /* increased size */
-        height: 200px;
-        border-radius: 50%;
-        border: 2px solid rgba(17,143,219,0.6);
-        box-shadow: 0 0 35px rgba(17,143,219,0.55);
-        background: radial-gradient(circle at 30% 30%, #1b1b1b, #000);
-        object-fit: cover;
-        margin-bottom: 25px;
+        .video-wrapper {
+        width: 100%;
+        max-width: 700px;
+        margin-top: 20px;
         }
 
-        /* Text logo */
-        .container img[src$="text.png"] {
-        width: 90%;          /* slightly narrower than before */
-        max-width: 480px;    /* tighter cap */
-        filter: drop-shadow(0 0 8px rgba(17,143,219,0.45));
-        margin-top: 15px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        transform: scale(1.10);
+        .video-wrapper iframe {
+        width: 100%;
+        height: 395px;
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 0 25px rgba(17,143,219,0.45);
         }
-        
-        /* Links list */
+
         .links {
         display: flex;
         flex-wrap: wrap;
@@ -92,7 +80,6 @@
         margin: 12px;
         }
 
-        /* Buttons */
         .links li a {
         display: flex;
         align-items: center;
@@ -111,7 +98,6 @@
         overflow: hidden;
         }
 
-        /* Gloss overlay on hover */
         .links li a::before {
         content: "";
         position: absolute;
@@ -154,13 +140,29 @@
         .links li a i {
             font-size: 4vw;
         }
+        .video-wrapper iframe {
+            height: 260px;
+        }
         }
 
     </style>
 </head>
 <body>
   <div class="container">
-    <img src="images/godspeed.jpg" alt="Godspeed cover" class="profile-img">
+
+    <div class="video-wrapper">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/Nr_TybR3z6s"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+    
     <ul class="links">
       <li><a href="https://music.apple.com/tr/album/godspeed-single/1827091760"><i class="fab fa-apple"></i></a></li>
       <li><a href="https://open.spotify.com/album/3N9yqRh8MvW5HicKSnCiIL"><i class="fab fa-spotify"></i></a></li>
